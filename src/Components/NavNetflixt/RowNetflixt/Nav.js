@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import useOnline from "../../../utils/useOnline";
 import "./Nav.css";
 
 function Nav() {
@@ -13,8 +14,10 @@ function Nav() {
       window.removeEventListener("scroll", handleShow);
     };
   }, []);
-
+ const isOnline = useOnline()
   return (
+    <>
+    <h1 className="sticky">{isOnline? <p  className="online">Online</p> : <p className="offline"> Offline!</p> }</h1>
     <div className={`nav ${show && "nav__black"}`}>
       <img
         className="nav__logo"
@@ -26,7 +29,8 @@ function Nav() {
         src="https://i.pinimg.com/originals/0d/dc/ca/0ddccae723d85a703b798a5e682c23c1.png"
         alt="Avatar logo"
       />
-    </div>
+      </div>
+      </>
   );
 }
 

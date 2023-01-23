@@ -6,7 +6,7 @@
     height: 30px;
     z-index: 1;
     display: flex;
-  justify-content: space-between;
+    justify-content: space-between;
     transition: all 0.5s;
     transition-timing-function: ease-in;
 }
@@ -27,4 +27,31 @@
     right: 20px;
     width: 30px;
     object-fit: contain;
+}
+
+.online {
+    background-color: green !important;
+    border-radius: 13px !important;
+    width: 15% !important;
+    height: 40px !important;
+    margin-left: 0 !important;
+    text-align: center !important;
+    margin: 0 auto;
+
+}
+
+.sticky {
+    position: sticky;
+    top: 0;
+    width: 100% !important;
+    background-color: green;
+}
+
+.offline {
+    background-color: red;
+    border-radius: 13px !important;
+    width: 15% !important;
+    height: 40px !important;
+    margin-left: 0 !important;
+    text-align: center !important;
 }

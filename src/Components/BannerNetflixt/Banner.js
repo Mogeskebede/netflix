@@ -24,7 +24,7 @@ function Banner() {
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
- const isOnline = useOnline()
+
   return movie?.length === 0 ? (<p>Loading...</p>) :(
     <header
       
@@ -35,7 +35,7 @@ function Banner() {
         backgroundPosition: "center",
       }}
     >
-       <h1>{isOnline? <p  className="online">Welcome! Online</p> : <p className="offline"> You are Offline!</p> }</h1>
+       
       <div className="banner__contents">
        
         <h1 className="banner__title">
