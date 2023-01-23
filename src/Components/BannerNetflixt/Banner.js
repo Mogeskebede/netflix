@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from "react";
+import { Shimmer } from "react-shimmer";
 import axios from "../../axios";
 import requests from "../../requests";
+import useOnline from "../../utils/useOnline";
 import "./Banner.css";
 function Banner() {
   const [movie, setMovie] = useState([]);
+
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
@@ -21,8 +24,10 @@ function Banner() {
   function truncate(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
   }
-  return (
+ const isOnline = useOnline()
+  return movie?.length === 0 ? (<p>Loading...</p>) :(
     <header
+      
       className="banner"
       style={{
         backgroundSize: "cover",
@@ -30,7 +35,9 @@ function Banner() {
         backgroundPosition: "center",
       }}
     >
+       <h1>{isOnline? <p  className="online">Welcome! Online</p> : <p className="offline"> You are Offline!</p> }</h1>
       <div className="banner__contents">
+       
         <h1 className="banner__title">
           {movie?.title || movie?.name || movie.original_name}
         </h1>

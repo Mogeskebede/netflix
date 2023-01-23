@@ -53,3 +53,21 @@
             rgb(37, 37, 37, 0.61),
             #111);
 }
+
+.online {
+    background-color: green;
+    border-radius: 13px;
+    width: 15%;
+    height: 40px;
+    margin-left: 0 !important;
+    text-align: center;
+}
+
+.offline {
+    background-color: red;
+    border-radius: 50px;
+    width: 20%;
+    height: 60px;
+    margin-left: 0 !important;
+    text-align: center;
+}
